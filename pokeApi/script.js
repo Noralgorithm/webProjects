@@ -1,10 +1,11 @@
+'strict mode'
 let pokemon;
 let container = document.querySelector('.container')
 
 const createCard = async(i)=>{
     pokemon = await axios(`https://pokeapi.co/api/v2/pokemon/${i}`);
     let pkmName = pokemon.data.name;
-    console.log(pkmName);
+    console.log(i+pkmName);
     let id = pokemon.data.id;
     let imgURL = pokemon.data.sprites.other.dream_world.front_default;
 
